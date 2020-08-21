@@ -8,8 +8,13 @@ contract SolnSquareVerifier is ERC721MintableComplete {
     Verifier private verifierContract;
     using Counters for Counters.Counter;
 
-    constructor(address verifierContractAddress)
-    public
+    constructor
+    (
+        address verifierContractAddress,
+        string memory name,
+        string memory symbol
+    )
+        public ERC721MintableComplete(name, symbol)
      {
         verifierContract = Verifier(verifierContractAddress);
     }
@@ -19,6 +24,7 @@ contract SolnSquareVerifier is ERC721MintableComplete {
     struct Solution {
         uint256 index;
         address senderAddress;
+        bool isMinted;
     }
 
 
@@ -33,8 +39,7 @@ contract SolnSquareVerifier is ERC721MintableComplete {
 
 // TODO Create an event to emit when a solution is added
     event SolutionAdded(bytes32 solutionKey, address senderAddress);
-
-
+    event VerifiedTokenMinted(address to, uint256 tokenID);
 
 // TODO Create a function to add the solutions to the array and emit the event
     function addSolution 
@@ -51,7 +56,8 @@ contract SolnSquareVerifier is ERC721MintableComplete {
 
         solutionsSubmitted[solutionKey] = Solution({
             index: solutionsSubmitted[solutionKey].index,
-            senderAddress: msg.sender
+            senderAddress: msg.sender,
+            isMinted: false
         });
 
         solutionsCount.increment();
@@ -65,6 +71,8 @@ contract SolnSquareVerifier is ERC721MintableComplete {
 
     function mintWhenVerified 
     (
+        address to,
+        uint256 tokenId,
         uint[2] memory a,
         uint[2][2] memory b,
         uint[2] memory c,
@@ -73,8 +81,11 @@ contract SolnSquareVerifier is ERC721MintableComplete {
         public
     {
         bytes32 solutionKey = keccak256(abi.encodePacked(a, b, c, input));
-        require(verifierContract.verifyTx(a, b, c, input), "Incorrect Solution");
-        mint(solutionsSubmitted[solutionKey].senderAddress, solutionsSubmitted[solutionKey].index);
+        require(solutionsSubmitted[solutionKey].isMinted == false, "Solution already minted");
+        addSolution(a, b, c, input);
+        super.mint(to, tokenId);
+        solutionsSubmitted[solutionKey].isMinted = true;
+        emit VerifiedTokenMinted(to, tokenId);
     }
 
 }
