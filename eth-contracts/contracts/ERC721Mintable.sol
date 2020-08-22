@@ -561,6 +561,8 @@ contract ERC721Metadata is ERC721Enumerable, usingOraclize {
 //      -calls the superclass mint and setTokenURI functions
 
 contract ERC721MintableComplete is ERC721Metadata {
+    event TokenMinted(address indexed to, uint256 indexed tokenId);
+
       constructor(string memory name, string memory symbol)
         public
         ERC721Metadata(
@@ -574,6 +576,7 @@ contract ERC721MintableComplete is ERC721Metadata {
     function mint(address to, uint256 tokenId) public onlyOwner returns (bool) {
         super._mint(to, tokenId);
         super._setTokenURI(tokenId);
+        emit TokenMinted(to, tokenId);
         return true;
     }
 }
