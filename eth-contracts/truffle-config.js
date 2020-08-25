@@ -49,7 +49,7 @@ module.exports = {
      },
 
      rinkeby: {
-      provider: () => new HDWalletProvider("vote legend logic shell office burger country lake hedgehog hazard chief jazz", "https://rinkeby.infura.io/v3/9fee4f44139743229fdd76e5a86948a6"),
+      provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${infuraKey}`),
       network_id: 4,       // rinkeby's id
       gasPrice: 21000000000,
       networkCheckTimeout: 10000000
