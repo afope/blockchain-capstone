@@ -909,7 +909,7 @@ Summary
 
 # Store Front Information
 
-[Link to opensea storefront](https://github.com/user/repo/blob/branch/other_file.md)
+[Link to opensea storefront](https://rinkeby.opensea.io/storefront/tokenname-v3)
 
 ## Tokens Minted
 - `0x2e65d5e6b129fc21fe9f98eb5bb34c7226257bfb8ce931ce9fd2525694e3696f`
