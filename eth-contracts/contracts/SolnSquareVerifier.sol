@@ -5,7 +5,7 @@ import "./ERC721Mintable.sol";
 // TODO define another contract named SolnSquareVerifier that inherits from your ERC721Mintable class
 
 contract SolnSquareVerifier is ERC721MintableComplete {
-    Verifier private verifierContract;
+    NewVerifier private verifierContract;
     using Counters for Counters.Counter;
 
     constructor
@@ -16,7 +16,7 @@ contract SolnSquareVerifier is ERC721MintableComplete {
     )
         public ERC721MintableComplete(name, symbol)
      {
-        verifierContract = Verifier(verifierContractAddress);
+        verifierContract = NewVerifier(verifierContractAddress);
     }
 
 
@@ -92,7 +92,7 @@ contract SolnSquareVerifier is ERC721MintableComplete {
 
 // TODO define a contract call to the zokrates generated solidity contract <Verifier> or <renamedVerifier>
 
-contract Verifier {
+contract NewVerifier {
      function verifyTx(
             uint[2] memory a,
             uint[2][2] memory b,

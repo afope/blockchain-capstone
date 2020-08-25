@@ -2956,8 +2956,8 @@
           }
         ],
         "contractDependencies": [
-          193,
           147,
+          193,
           70
         ],
         "contractKind": "contract",
@@ -9536,10 +9536,10 @@
           }
         ],
         "contractDependencies": [
-          193,
           147,
-          70,
-          687
+          687,
+          193,
+          70
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -13209,11 +13209,11 @@
           }
         ],
         "contractDependencies": [
-          193,
           147,
-          70,
           687,
+          193,
           985,
+          70,
           7466
         ],
         "contractKind": "contract",
@@ -14454,12 +14454,12 @@
           }
         ],
         "contractDependencies": [
-          193,
           147,
-          70,
           687,
+          193,
           985,
           1087,
+          70,
           7466
         ],
         "contractKind": "contract",
@@ -17483,8 +17483,8 @@
           }
         ],
         "contractDependencies": [
-          193,
           147,
+          193,
           70
         ],
         "contractKind": "contract",
@@ -24063,10 +24063,10 @@
           }
         ],
         "contractDependencies": [
-          193,
           147,
-          70,
-          687
+          687,
+          193,
+          70
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -27736,11 +27736,11 @@
           }
         ],
         "contractDependencies": [
-          193,
           147,
-          70,
           687,
+          193,
           985,
+          70,
           7466
         ],
         "contractKind": "contract",
@@ -28981,12 +28981,12 @@
           }
         ],
         "contractDependencies": [
-          193,
           147,
-          70,
           687,
+          193,
           985,
           1087,
+          70,
           7466
         ],
         "contractKind": "contract",
@@ -29624,8 +29624,8 @@
     "version": "0.5.5+commit.47a71e8f.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.21",
-  "updatedAt": "2020-08-22T13:26:41.260Z",
+  "schemaVersion": "3.2.3",
+  "updatedAt": "2020-08-25T15:00:03.959Z",
   "devdoc": {
     "methods": {
       "isApprovedForAll(address,address)": {
