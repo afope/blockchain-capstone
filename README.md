@@ -2,9 +2,6 @@
 
 The capstone will build upon the knowledge you have gained in the course in order to build a decentralized tokens/housing project. 
 
-![store front photo](images/image_one.png)
-![store photo](images/image_two.png)
-
 # Project Resources
 
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
@@ -909,7 +906,7 @@ Summary
 
 # Store Front Information
 
-[Link to opensea storefront](https://rinkeby.opensea.io/storefront/tokenname-v3)
+[Link to opensea storefront](https://rinkeby.opensea.io/assets/tokenname-v3)
 
 ## Tokens Minted
 - `0x2e65d5e6b129fc21fe9f98eb5bb34c7226257bfb8ce931ce9fd2525694e3696f`
