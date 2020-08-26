@@ -18,7 +18,7 @@
  *
  */
 
-const HDWalletProvider = require("@truffle/hdwallet-provider");
+const HDWalletProvider = require("truffle-hdwallet-provider");
 require('dotenv').config(); // Store environment-specific variable from '.env' to process.env
 
 const infuraKey = process.env.INFURA_KEY;
@@ -49,10 +49,12 @@ module.exports = {
      },
 
      rinkeby: {
-      provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${infuraKey}`),
-      network_id: 4,       // rinkeby's id
-      gasPrice: 21000000000,
-      networkCheckTimeout: 10000000
+      provider: function () {
+        return new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${infuraKey}`
+        );
+      },
+      network_id: "*",
+      gas: 4000000,
     },
 
     // Another network with more advanced options...
@@ -67,12 +69,12 @@ module.exports = {
 
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
-    ropsten: {
-      provider: function() {
-        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/95608f62482346a3aedd64fde4f70944");
-      },
-        network_id: '3',       // Ropsten's id
-    },
+    // ropsten: {
+    //   provider: function() {
+    //     return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/95608f62482346a3aedd64fde4f70944");
+    //   },
+    //     network_id: '3',       // Ropsten's id
+    // },
 
     // Useful for private networks
     // private: {

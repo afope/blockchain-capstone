@@ -81,6 +81,7 @@ contract SolnSquareVerifier is ERC721MintableComplete {
         public
     {
         bytes32 solutionKey = keccak256(abi.encodePacked(a, b, c, input));
+        require(verifierContract.verifyTx(a, b, c, input),"Incorrect Solution");
         require(solutionsSubmitted[solutionKey].isMinted == false, "Solution already minted");
         addSolution(a, b, c, input);
         super.mint(to, tokenId);
